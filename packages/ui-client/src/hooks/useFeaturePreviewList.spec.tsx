@@ -5,7 +5,6 @@ import { useFeaturePreviewList, enabledDefaultFeatures } from './useFeaturePrevi
 
 it('should return the number of unseen features and Accounts_AllowFeaturePreview enabled ', () => {
 	const { result } = renderHook(() => useFeaturePreviewList(), {
-		legacyRoot: true,
 		wrapper: mockAppRoot().withSetting('Accounts_AllowFeaturePreview', true).build(),
 	});
 
@@ -19,7 +18,6 @@ it('should return the number of unseen features and Accounts_AllowFeaturePreview
 
 it('should return the number of unseen features and Accounts_AllowFeaturePreview disabled ', () => {
 	const { result } = renderHook(() => useFeaturePreviewList(), {
-		legacyRoot: true,
 		wrapper: mockAppRoot().withSetting('Accounts_AllowFeaturePreview', false).build(),
 	});
 
@@ -33,7 +31,6 @@ it('should return the number of unseen features and Accounts_AllowFeaturePreview
 
 it('should return 0 unseen features', () => {
 	const { result } = renderHook(() => useFeaturePreviewList(), {
-		legacyRoot: true,
 		wrapper: mockAppRoot()
 			.withSetting('Accounts_AllowFeaturePreview', true)
 			.withUserPreference('featuresPreview', enabledDefaultFeatures)
@@ -50,7 +47,6 @@ it('should return 0 unseen features', () => {
 
 it('should ignore removed feature previews', () => {
 	const { result } = renderHook(() => useFeaturePreviewList(), {
-		legacyRoot: true,
 		wrapper: mockAppRoot()
 			.withSetting('Accounts_AllowFeaturePreview', true)
 			.withUserPreference('featuresPreview', [
@@ -73,7 +69,6 @@ it('should ignore removed feature previews', () => {
 
 it('should turn off ignored feature previews', async () => {
 	const { result } = renderHook(() => useFeaturePreviewList(), {
-		legacyRoot: true,
 		wrapper: mockAppRoot()
 			.withSetting('Accounts_AllowFeaturePreview', true)
 			.withUserPreference('featuresPreview', [
