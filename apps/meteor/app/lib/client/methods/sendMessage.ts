@@ -31,9 +31,9 @@ Meteor.methods<ServerMethods>({
 			name: user.name || '',
 		};
 		message.temp = true;
-		if (settings.get('Message_Read_Receipt_Enabled')) {
+		// if (settings.get('Message_Read_Receipt_Enabled')) {
 			message.unread = true;
-		}
+		// }
 
 		// If the room is federated, send the message to matrix only
 		const room = ChatRoom.findOne({ _id: message.rid }, { fields: { federated: 1, name: 1 } });

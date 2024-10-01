@@ -39,9 +39,9 @@ const updateMessages = debounceByRoomId(async ({ _id, lm }) => {
 
 export const ReadReceipt = {
 	async markMessagesAsRead(roomId, userId, userLastSeen) {
-		if (!settings.get('Message_Read_Receipt_Enabled')) {
-			return;
-		}
+		// if (!settings.get('Message_Read_Receipt_Enabled')) {
+		// 	return;
+		// }
 
 		const room = await Rooms.findOneById(roomId, { projection: { lm: 1 } });
 
@@ -56,9 +56,9 @@ export const ReadReceipt = {
 	},
 
 	async markMessageAsReadBySender(message, { _id: roomId, t }, userId) {
-		if (!settings.get('Message_Read_Receipt_Enabled')) {
-			return;
-		}
+		// if (!settings.get('Message_Read_Receipt_Enabled')) {
+		// 	return;
+		// }
 
 		if (!message.unread) {
 			return;
@@ -80,9 +80,9 @@ export const ReadReceipt = {
 	},
 
 	async storeThreadMessagesReadReceipts(tmid, userId, userLastSeen) {
-		if (!settings.get('Message_Read_Receipt_Enabled')) {
-			return;
-		}
+		// if (!settings.get('Message_Read_Receipt_Enabled')) {
+		// 	return;
+		// }
 
 		const message = await Messages.findOneById(tmid, { projection: { tlm: 1, rid: 1 } });
 

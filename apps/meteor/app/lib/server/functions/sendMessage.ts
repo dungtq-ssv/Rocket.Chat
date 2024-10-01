@@ -228,9 +228,9 @@ export const sendMessage = async function (user: any, message: any, room: any, u
 		return message;
 	}
 
-	if (settings.get('Message_Read_Receipt_Enabled')) {
+	// if (settings.get('Message_Read_Receipt_Enabled')) {
 		message.unread = true;
-	}
+	// }
 
 	// For the Rocket.Chat Apps :)
 	if (Apps.self?.isLoaded()) {

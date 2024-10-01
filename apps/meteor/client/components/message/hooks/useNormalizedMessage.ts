@@ -89,7 +89,7 @@ export const useNormalizedMessage = <TMessage extends IMessage>(message: TMessag
 				normalizedMessage.file?.type,
 			);
 		}
-
+		console.log('useNormalizedMessage',message)
 		return normalizedMessage;
 	}, [showColors, customDomains, katexEnabled, katexDollarSyntaxEnabled, katexParenthesisSyntaxEnabled, message, autoTranslateOptions]);
 };

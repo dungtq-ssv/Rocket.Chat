@@ -5,8 +5,8 @@ services:
     platform: linux/amd64
     build:
       dockerfile: ${RC_DOCKERFILE}
-      context: /tmp/build
-    image: ghcr.io/${LOWERCASE_REPOSITORY}/rocket.chat:${RC_DOCKER_TAG}
+      context: ./docker
+#    image: ghcr.io/${LOWERCASE_REPOSITORY}/rocket.chat:${RC_DOCKER_TAG}
     environment:
       - TEST_MODE=true
       - EXIT_UNHANDLEDPROMISEREJECTION=true
@@ -112,7 +112,7 @@ services:
       - 'host.docker.internal:host-gateway'
     depends_on:
       - nats
-  
+
   queue-worker-service:
     platform: linux/amd64
     build:
@@ -128,7 +128,7 @@ services:
       - 'host.docker.internal:host-gateway'
     depends_on:
       - nats
-  
+
   omnichannel-transcript-service:
     platform: linux/amd64
     build:
@@ -144,7 +144,7 @@ services:
       - 'host.docker.internal:host-gateway'
     depends_on:
       - nats
-  
+
   mongo:
     image: docker.io/bitnami/mongodb:4.4
     restart: on-failure

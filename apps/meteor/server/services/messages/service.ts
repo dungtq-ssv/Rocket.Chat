@@ -137,7 +137,7 @@ export class MessageService extends ServiceClassInternal implements IMessageServ
 				rid,
 				message,
 				{ _id: userId, username, name },
-				settings.get('Message_Read_Receipt_Enabled'),
+				true /*settings.get('Message_Read_Receipt_Enabled')*/,
 				extraData,
 			),
 			Rooms.incMsgCountById(rid, 1),

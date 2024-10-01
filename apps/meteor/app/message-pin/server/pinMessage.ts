@@ -111,9 +111,9 @@ Meteor.methods<ServerMethods>({
 		originalMessage = await Message.beforeSave({ message: originalMessage, room, user: me });
 
 		await Messages.setPinnedByIdAndUserId(originalMessage._id, originalMessage.pinnedBy, originalMessage.pinned);
-		if (settings.get('Message_Read_Receipt_Store_Users')) {
+		// if (settings.get('Message_Read_Receipt_Store_Users')) {
 			await ReadReceipts.setPinnedByMessageId(message._id, originalMessage.pinned);
-		}
+		// }
 		if (isTheLastMessage(room, message)) {
 			await Rooms.setLastMessagePinned(room._id, originalMessage.pinnedBy, originalMessage.pinned);
 			void notifyOnRoomChangedById(room._id);
@@ -221,9 +221,9 @@ Meteor.methods<ServerMethods>({
 		await Apps.self?.triggerEvent(AppEvents.IPostMessagePinned, originalMessage, await Meteor.userAsync(), originalMessage.pinned);
 
 		await Messages.setPinnedByIdAndUserId(originalMessage._id, originalMessage.pinnedBy, originalMessage.pinned);
-		if (settings.get('Message_Read_Receipt_Store_Users')) {
+		// if (settings.get('Message_Read_Receipt_Store_Users')) {
 			await ReadReceipts.setPinnedByMessageId(originalMessage._id, originalMessage.pinned);
-		}
+		// }
 		void notifyOnMessageChange({
 			id: message._id,
 		});

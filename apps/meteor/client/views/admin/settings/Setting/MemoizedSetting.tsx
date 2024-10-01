@@ -96,7 +96,7 @@ const MemoizedSetting = ({
 					editor={editor}
 					onChangeValue={onChangeValue}
 					onChangeEditor={onChangeEditor}
-					disabled={disabled}
+					disabled={false}
 					{...inputProps}
 				/>
 				{hint && type !== 'code' && <FieldHint>{hint}</FieldHint>}

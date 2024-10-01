@@ -197,8 +197,8 @@ describe('Meteor.methods', () => {
 				Promise.all([
 					deleteRoom({ type: 'p', roomId: room._id }),
 					deleteUser(user),
-					updateSetting('Message_Read_Receipt_Enabled', false),
-					updateSetting('Message_Read_Receipt_Store_Users', false),
+					updateSetting('Message_Read_Receipt_Enabled', true),
+					updateSetting('Message_Read_Receipt_Store_Users', true),
 				]),
 			);
 

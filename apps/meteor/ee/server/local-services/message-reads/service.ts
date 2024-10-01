@@ -9,7 +9,9 @@ export class MessageReadsService extends ServiceClassInternal implements IMessag
 	protected name = 'message-reads';
 
 	async readThread(userId: string, tmid: string): Promise<void> {
+		console.debug('MessageReadsService', '===>>>', 'readThread', userId, tmid);
 		const read = await MessageReads.findOneByUserIdAndThreadId(userId, tmid);
+		console.debug('MessageReadsService', '===>>>', 'readThread', userId, tmid, read);
 
 		const threadMessage = await Messages.findOneById(tmid, { projection: { ts: 1, tlm: 1, rid: 1 } });
 		if (!threadMessage?.tlm) {

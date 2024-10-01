@@ -14,7 +14,7 @@ const LayoutWithSidebar = ({ children }: { children: ReactNode }): ReactElement 
 	const currentRoutePath = useCurrentRoutePath();
 	const channelRoute = useRoute('channel');
 	const removeSidenav = embeddedLayout && !currentRoutePath?.startsWith('/admin');
-	const readReceiptsEnabled = useSetting('Message_Read_Receipt_Store_Users');
+	const readReceiptsEnabled = true;//useSetting('Message_Read_Receipt_Store_Users');
 
 	const firstChannelAfterLogin = useSetting('First_Channel_After_Login');
 

@@ -32,7 +32,7 @@ const ThreadMessageContent = ({ message }: ThreadMessageContentProps): ReactElem
 	const broadcast = subscription?.broadcast ?? false;
 	const uid = useUserId();
 	const messageUser: UserPresence = { ...message.u, roles: [], ...useUserData(message.u._id) };
-	const readReceiptEnabled = useSetting('Message_Read_Receipt_Enabled', false);
+	const readReceiptEnabled = true;//useSetting('Message_Read_Receipt_Enabled', true);
 
 	const t = useTranslation();
 

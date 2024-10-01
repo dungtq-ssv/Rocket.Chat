@@ -41,7 +41,7 @@ test.describe.serial('read-receipts', () => {
 		});
 
 		test.afterAll(async ({ api }) => {
-			await setSettingValueById(api, 'Message_Read_Receipt_Enabled', false);
+			await setSettingValueById(api, 'Message_Read_Receipt_Enabled', true);
 			await setSettingValueById(api, 'Message_Read_Receipt_Store_Users', false);
 		});
 

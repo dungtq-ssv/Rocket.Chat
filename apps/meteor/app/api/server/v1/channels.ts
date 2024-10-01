@@ -612,8 +612,7 @@ API.v1.addRoute(
 			const room = await findChannelByIdOrName({
 				params: this.queryParams,
 			});
-			const subscription = await Subscriptions.findOneByRoomIdAndUserId(room._id, user);
-			const lm = room.lm ? room.lm : room._updatedAt;
+¶			const lm = room.lm ? room.lm : room._updatedAt;
 
 			if (subscription?.open) {
 				unreads = await Messages.countVisibleByRoomIdBetweenTimestampsInclusive(subscription.rid, subscription.ls, lm);

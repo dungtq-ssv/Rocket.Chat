@@ -1191,9 +1191,9 @@ export default class SlackAdapter {
 			if (!isImporting && slackMessage.attachments[0].channel_id && slackMessage.attachments[0].ts) {
 				const messageId = this.createSlackMessageId(slackMessage.attachments[0].ts, slackMessage.attachments[0].channel_id);
 				await Messages.setPinnedByIdAndUserId(messageId, rocketMsgObj.u, true, new Date(parseInt(slackMessage.ts.split('.')[0]) * 1000));
-				if (settings.get('Message_Read_Receipt_Store_Users')) {
+				// if (settings.get('Message_Read_Receipt_Store_Users')) {
 					await ReadReceipts.setPinnedByMessageId(messageId, true);
-				}
+				// }
 			}
 
 			return rocketMsgObj;
@@ -1402,9 +1402,9 @@ export default class SlackAdapter {
 
 					const messageId = this.createSlackMessageId(pin.message.ts, pin.channel);
 					await Messages.setPinnedByIdAndUserId(messageId, msgObj.u, true, new Date(parseInt(pin.message.ts.split('.')[0]) * 1000));
-					if (settings.get('Message_Read_Receipt_Store_Users')) {
+					// if (settings.get('Message_Read_Receipt_Store_Users')) {
 						await ReadReceipts.setPinnedByMessageId(messageId, true);
-					}
+					// }
 				}
 			}
 		}

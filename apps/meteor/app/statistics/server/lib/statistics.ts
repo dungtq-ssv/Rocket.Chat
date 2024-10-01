@@ -382,8 +382,8 @@ export const statistics = {
 			platform: process.env.DEPLOY_PLATFORM || 'selfinstall',
 		};
 
-		statistics.readReceiptsEnabled = settings.get('Message_Read_Receipt_Enabled');
-		statistics.readReceiptsDetailed = settings.get('Message_Read_Receipt_Store_Users');
+		statistics.readReceiptsEnabled = true;//settings.get('Message_Read_Receipt_Enabled');
+		statistics.readReceiptsDetailed = true;//settings.get('Message_Read_Receipt_Store_Users');
 
 		statistics.enterpriseReady = true;
 		statsPms.push(

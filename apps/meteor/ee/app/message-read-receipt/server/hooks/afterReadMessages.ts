@@ -8,9 +8,9 @@ import { ReadReceipt } from '../../../../server/lib/message-read-receipt/ReadRec
 callbacks.add(
 	'afterReadMessages',
 	async (rid: IRoom['_id'], params: { uid: IUser['_id']; lastSeen?: Date; tmid?: IMessage['_id'] }) => {
-		if (!settings.get('Message_Read_Receipt_Enabled')) {
-			return;
-		}
+		// if (!settings.get('Message_Read_Receipt_Enabled')) {
+		// 	return;
+		// }
 		const { uid, lastSeen, tmid } = params;
 
 		if (tmid) {
