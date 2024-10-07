@@ -16,7 +16,7 @@ const ActiveSessionsPeakCard = (): ReactElement => {
 
 	const { maxMonthlyPeakConnections } = data || {};
 
-	const total = 200;
+	const total = 3000;
 	const used = maxMonthlyPeakConnections || 0;
 
 	const exceedLimit = used >= total;

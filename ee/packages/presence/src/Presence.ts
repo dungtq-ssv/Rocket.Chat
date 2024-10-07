@@ -6,18 +6,18 @@ import { Settings, Users, UsersSessions } from '@rocket.chat/models';
 
 import { processPresenceAndStatus } from './lib/processConnectionStatus';
 
-const MAX_CONNECTIONS = 200;
+const MAX_CONNECTIONS = 3000;
 
 export class Presence extends ServiceClass implements IPresence {
 	protected name = 'presence';
 
 	private broadcastEnabled = true;
 
-	private hasPresenceLicense = false;
+	private hasPresenceLicense = true;
 
-	private hasScalabilityLicense = false;
+	private hasScalabilityLicense = true;
 
-	private hasLicense = false;
+	private hasLicense = true;
 
 	private lostConTimeout?: NodeJS.Timeout;
 
