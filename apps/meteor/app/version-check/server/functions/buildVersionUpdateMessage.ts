@@ -1,13 +1,14 @@
-import { Settings } from '@rocket.chat/models';
-import semver from 'semver';
+// import { Settings } from '@rocket.chat/models';
+// import semver from 'semver';
 
-import { i18n } from '../../../../server/lib/i18n';
-import { sendMessagesToAdmins } from '../../../../server/lib/sendMessagesToAdmins';
-import { notifyOnSettingChangedById } from '../../../lib/server/lib/notifyListener';
-import { settings } from '../../../settings/server';
-import { Info } from '../../../utils/rocketchat.info';
+// import { i18n } from '../../../../server/lib/i18n';
+// import { sendMessagesToAdmins } from '../../../../server/lib/sendMessagesToAdmins';
+// import { notifyOnSettingChangedById } from '../../../lib/server/lib/notifyListener';
+// import { settings } from '../../../settings/server';
+// import { Info } from '../../../utils/rocketchat.info';
 
 export const buildVersionUpdateMessage = async (
+	// @ts-ignore
 	versions: {
 		version: string;
 		security: boolean;
@@ -18,13 +19,13 @@ export const buildVersionUpdateMessage = async (
 		return;
 	}
 
-	const lastCheckedVersion = settings.get<string>('Update_LatestAvailableVersion');
+	// const lastCheckedVersion = settings.get<string>('Update_LatestAvailableVersion');
+	//
+	// if (!lastCheckedVersion) {
+	// 	return;
+	// }
 
-	if (!lastCheckedVersion) {
-		return;
-	}
-
-	for await (const version of versions) {
+	/*	for await (const version of versions) {
 		// Ignore prerelease versions
 		if (semver.prerelease(version.version)) {
 			continue;
@@ -66,5 +67,5 @@ export const buildVersionUpdateMessage = async (
 			],
 		});
 		break;
-	}
+	}*/
 };

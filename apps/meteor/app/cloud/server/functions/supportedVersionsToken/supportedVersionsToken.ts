@@ -161,7 +161,7 @@ const getSupportedVersionsToken = async () => {
 			break;
 	}
 
-	await buildVersionUpdateMessage(supportedVersions?.versions);
+	// await buildVersionUpdateMessage(supportedVersions?.versions);
 
 	return supportedVersions?.signed;
 };

@@ -45,13 +45,13 @@ const getMessagesToSendToAdmins = async (
 export const checkVersionUpdate = async () => {
 	logger.info('Checking for version updates');
 
-	const { versions, alerts } = await getNewUpdates();
+	// const { versions, alerts } = await getNewUpdates();
 
-	await buildVersionUpdateMessage(versions);
+	// await buildVersionUpdateMessage(versions);
 
-	await showAlertsFromCloud(alerts);
+	// await showAlertsFromCloud(alerts);
 };
-
+// @ts-ignore
 const showAlertsFromCloud = async (
 	alerts?: {
 		id: string;
